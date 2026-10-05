@@ -27,3 +27,32 @@ Console.WriteLine(uczen3);
 Console.WriteLine("liczba uczniów " + Uczen.liczbaUczniow);
 Nauczyciel nauczyciel = new Nauczyciel("Anna",60,"wf");
 Console.WriteLine(nauczyciel);
+
+public zespol(int poziom, char zawod, Nauczyciel nauczyciel)
+{
+    this.poziom = poziom;
+    this.zawod = zawod;
+    this.nauczyciel = nauczyciel;
+    nazwa = poziom.ToString() + zawod;
+    uczeniowie = new List<Uczen>();
+}
+public void dodajUcznia(Uczen uczen)
+{
+    if(uczniowie.contains(uczen))
+    {
+        Console.WriteLine("ten uczen jest w klasie");
+    }
+    else
+    {
+        uczniowie.Add(uczen);
+    }
+}
+public void wypiszUczniow()
+{
+    Console.WriteLine("uczniowie w klasie " + nazwa);
+    Console.WriteLine("wychowawca " + nauczyciel);
+    foreach (Uczen uczen in uczniowie)
+    {
+        Console.WriteLine("- " + uczen.ToString());
+    }
+}
